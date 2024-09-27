@@ -1,39 +1,312 @@
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
     <title>Cache Bank Landing Page</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/css/leaflet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="./assets/css/tailwind/tailwind.min.css">
     <link rel="stylesheet" href="./assets/css/theme.css">
     <link rel="stylesheet" href="./assets/css/loopple/loopple.css">
+    <!-- <link rel="stylesheet" href="src/styles.css"> -->
 </head>
 
-<body class="null">
-    <div class="container flex flex-col mx-auto">
-        <!-- Main container with navigation and header content -->
+<body class="bg-gray-100 p-5 ">
+
+  <!-- Component 1: Navigation -->
+  <div class="mx-auto bg-white ">
+      <div class="relative w-full flex flex-wrap items-center justify-between shrink-0">
+          <div class="px-4">
+              <img class="h-8" src="assets/component-1/navigation/cache-bank-logo.png" alt="Cache Bank Logo">
+          </div>
+
+          <div class="hidden md:flex items-center justify-between gap-12 text-black">
+              <a class="text-sm font-normal text-dark-gray-500 hover:text-dark-gray-700" href="#">Product</a>
+              <a class="text-sm font-normal text-dark-gray-500 hover:text-dark-gray-700" href="#">Features</a>
+              <a class="text-sm font-normal text-dark-gray-500 hover:text-dark-gray-700" href="#">Get Started</a>
+              <a class="text-sm font-normal text-dark-gray-500 hover:text-dark-gray-700" href="#">Contact</a>
+          </div>
+
+          <div class="hidden md:flex gap-8 p-4 items-center ">
+              <button class="text-sm font-normal text-dark-gray-800 hover:text-dark-gray-900">Log In</button>
+              <button class="px-4 py-2 bg-green-500 rounded text-sm font-bold text-white hover:bg-green-600 rounded-xl">Sign Up</button>
+          </div>
+
+          <button class="p-4 lg:hidden md:hidden" id="mobile-menu-toggle">
+              <svg
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="h-6 w-6"
+              fill="none"
+              >
+              <g clip-path="url(#clip0_429_11066)">
+                <path
+                  d="M3 6.00092H21M3 12.0009H21M3 18.0009H21"
+                  stroke="#292929"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_429_11066">
+                  <rect
+                    width="24"
+                    height="24"
+                    fill="white"
+                    transform="translate(0 0.000915527)"
+                  />
+                </clipPath>
+              </defs>
+              </svg>
+          </button>
+
+          <!-- Small Screen Menu -->
+          <div class="md:hidden absolute flex flex-col md:flex items-start justify-center justify start gap-3 w-full overflow-hidden bg-white max-h-screen top-full px-4 py-8 transition-all duration-300" id="mobile-menu">
+              <div class="flex flex-col items-start justify-center p-4">
+                  <a class="text-sm font-normal text-dark-gray-500 hover:text-dark-gray-700" href="#">Product</a>
+                  <a class="text-sm font-normal text-dark-gray-500 hover:text-dark-gray-700" href="#">Features</a>
+                  <a class="text-sm font-normal text-dark-gray-500 hover:text-dark-gray-700" href="#">Get Started</a>
+                  <a class="text-sm font-normal text-dark-gray-500 hover:text-dark-gray-700" href="#">Contact</a>
+                  <button class="text-sm font-normal text-dark-gray-800 hover:text-dark-gray-900 mt-4">Log In</button>
+                  <button class="px-4 py-2 bg-green-500 rounded text-sm font-bold text-white hover:bg-green-600">Sign Up</button>
+              </div>
+          </div>
+      </div>
+        <!-- Component 2: Hero and Endorsements Section -->
+  
+  <div class="bg-gray-200  flex w-full justify-end  ">
+    
+    <div class="flex flex-col items-center justify-center text-center p-5">
+      <h1 class="text-2xl font-bold text-black mb-4 p-5">The Clever Place to Keep Your Cache</h1>
+      <p class="text-base font-normal leading-7 lg:w-3/4 text-dark-gray-900 mb-6">Cache Bank is exclusive for software developers. We understand your financial needs are as unique as the code you write. Our services offer cutting-edge financial solutions that help you take care of your cash.</p>
+      <div class="gap-3 flex flex-col items-center lg:flex-row p-5">
+      <button class="px-6 py-3 bg-blue-600 text-white rounded hover:bg-pink-500 transition duration-300">Join Cache Now</button>
+      <button class="px-6 py-3 bg-blue-600 text-white rounded hover:bg-pink-500 transition duration-300">join our Discord Server</button>
     </div>
-    <div class="w-full">
-        <!-- Wide full-width container for additional content -->
     </div>
-    <div class="container mx-auto">
-        <!-- Centered container for more content -->
+    <div class="flex flex-col justify-center hidden md:flex ">
+      <img class="W-4/5 " src="assets\component-2\hero-image.png" alt="header-image">
     </div>
-    <div class="w-full">
-        <!-- Wide full-width container for additional content -->
+  </div>
+
+ 
+
+  <div class="relative flex bg-white-200 mt-8  h-8">
+    <img  class="w-full h-auto" src="assets\component-2\logos\amazon-logo.svg" alt="Amazon">    
+    <img class="w-full h-auto" src="assets\component-2\logos\minecraft-logo.svg" alt="Minecraft" >
+    <img class="w-full h-auto" src="assets\component-2\logos\nike-logo.svg" alt="Nike">
+    <img class="w-full h-auto" src="assets\component-2\logos\notion-logo.svg" alt="Notion">
+    <img class="w-full h-auto" src="assets\component-2\logos\steam-logo.svg" alt="Steam">
+
+  </div>
+  </div>
+  
+                    <!-- Component 3: Features Section -->
+        <div class="container mx-auto my-10 text-center bg-gray-100">
+            <h2 class="text-2xl font-bold mb-4">Elevate Your Banking with Cache</h2>
+            <p>We merge cutting-edge banking with a deep understanding of software developers' needs. Experience tailored financail solutions, advanced security, and tech-focused support designed just for you.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="flex flex-col items-center rounded-lg bg-white my-6 hover:bg-green-500">
+                    <img class="bg-green-500 h-16 p-5 m-5 rounded my-6" src="assets\component-3\feature-icons\developer-focused-accounts.svg" alt="Developper-Focused Account Plans">
+                    <p class="text-xl">Developper-Focused Account Plans</p>
+                    <h3>Tailored accounts offering benefits like high-yield saving and exclisive investment options, designed specifically for software developers' financial needs and career growth.</h3>
+                </div>
+                <div class="flex flex-col items-center rounded-lg bg-white my-6 p-5 hover:bg-green-500">
+                    <img class="bg-green-500 h-16 p-5 m-5 rounded-lg" src="assets\component-3\feature-icons\advanced-online-banking.svg" alt="Advanced Online Banking Platform">
+                    <p class="text-xl">Advanced Online Banking Platform</p>
+                    <h3>A cutting-edge, intuitive online banking interface with features like API integrations, allowing developers to seamlessy manage finances alongside their coding projects.</h3>
+                </div>
+                <div class="flex flex-col items-center rounded bg-white my-6 p-5  hover:bg-green-500">
+                    <img class="bg-green-500 h-16 p-5 m-5 rounded-lg" src="assets\component-3\feature-icons\tech-savvy-customer.svg" alt="">
+                    <p class="text-xl">Teac-Savvy Customer Support</p>
+                    <h3>Expert support team with a deep understanding of the tech industry, providing relevent financial advice and assistance specificallt for software developers.</h3>
+                </div>
+                <div class="flex flex-col items-center rounded-lg bg-white my-6 p-5 hover:bg-green-500">
+                    <img class="bg-pink-500 h-16 p-5 m-5 rounded-lg" src="assets\component-3\feature-icons\high-level-security.svg" alt="">
+                    <p class="text-xl">High-Level-Security Features</p>
+                    <h3>State-of-the-art cybersecurity measures, including multi-factor authentication and encryption, ensuring the safety of digital assets, which is crucial for tech professionals.</h3>
+                </div>
+                <div class="flex flex-col items-center rounded-lg bg-white my-6 p-5 hover:bg-green-500">
+                    <img class="bg-pink-500 h-16 p-5 m-5 rounded-lg" src="assets\component-3\feature-icons\innovative-financial-tools.svg" alt="">
+                    <p class="text-xl">Innovative-Financial-Tools</p>
+                    <h3>Access to unique financial tools and resources, like project funding accounts and tech startup investment opportunities, catering to the entrepreneurial spirit of developers.</h3>
+                </div>
+                <div class="flex flex-col items-center bg-white rounded-lg my-6 p-5 hover:bg-green-500">
+                    <img class="bg-pink-500 h-16 p-5 m-5 rounded-lg" src="assets\component-3\feature-icons\community-networking-opps.svg" alt="">
+                    <p class="text-xl">Community and Networking Opportunities</p>
+                    <h3>Exclusive access to tech events,webinars, and a community platform for networking, collaboration, and sharing insights within the software development industry.</h3>
+                </div>
+            </div>
+        </div>
+
+               <!-- Component 4: statistic Section -->
+         <div class="w-full">
+            <div class="container flex flex-wrap justify-center items-center gap-9 w-full mb-10  ">
+                <div class="flex flex-col items-center">
+                    <h3 class="text-5xl font-extrabold text-center"><span id="countto2" countto="250"></span>+</h3>
+                    <p class="text-base text-center">Hours saved sitting in the bank</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <h3 class="text-5xl font-extrabold text-center"><span id="countto3" countto="12"></span>m</h3>
+                    <p class="text-base text-center">Hours saved sitting in the bank</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <h3 class="text-5xl font-extrabold text-center"><span id="countto4" countto="2,856" data-decimal="1"></span>k+</h3>
+                    <p class="text-base text-center">Global Partners</p>
+                </div>
+                <div class="flex flex-col items-center ">
+                    <h3 class="text-5xl font-extrabold text-center"><span id="countto5" countto="18000"></span>+</h3>
+                    <p class="text-base text-center">Happy Developers</p>
+                </div>
+                </div>
+                </div>
+            
+        
+         <!-- Getting started -->
+         <div class="w-full ">
+            <div class=" shadow-main">
+                <div class="flex flex-cols-1 lg:grid-cols-2 gap-32 w-full">
+             
+            <!-- Image Section -->
+            <div class="flex items-center justify-center lg:block hidden">
+                <img class="w-full" src="assets\component-4\getting-started.png" alt="How to get started with Cache Bank">
+              </div>
+
+            <!-- Content Section -->
+            <div class="flex flex-col justify-center text-center md:text-start rounded">
+                <h2 class="flex flex-col text-5xl font-extrabold m-5 ">How Cache Works?</h2>
+                <p class="m-5">Cache Bank simplifies sign-up with a user-friendly website, streamlined account options and an efficient verification process, making banking accessible and hassle-free for developers.</p>
+                
+
+                <div class="grid  grid-cols-1 md:grid-cols-2 gap-4 mt-8 px-5 py-8 h-auto">
+                    <div class="flex flex-col items-start shadow-main rounded-2xl p-5">
+                        <div class="flex items-center justify-center w-12 h-12 bg-green-500 text-white font-bold rounded-full">
+                            <span>1</span>
+                        </div>
+                        <h3 class="text-base font-bold leading-7 text-black mt-2">Visit Cache Bank Website</h3>
+                        <p class="text-base font-medium">Go to Cache Bank, click "sign-up" or "Open an Account."</p>
+                    </div>
+                    <div class="flex flex-col items-start shadow-main rounded-2xl p-5">
+                        <div class="flex items-center justify-center w-12 h-12 bg-pink-500 text-white font-bold rounded-full">
+                            <span>2</span>
+                        </div>
+                        <h3 class="text-base font-bold leading-7 text-black mt-2">Choose Account Type</h3>
+                        <p class="text-base font-medium">Select from checking, savings, or developers-specific accounts.</p>
+                    </div>
+                    <div class="flex flex-col items-start shadow-main rounded-2xl p-5">
+                        <div class="flex items-center justify-center w-12 h-12 bg-pink-500 text-white font-bold rounded-full">
+                            <span>3</span>
+                        </div>
+                        <h3 class="text-base font-bold leading-7 text-black mt-2">Provide Personal Information</h3>
+                        <p class="text-base font-medium">Complete the form with your details and identification for security.</p>
+                    </div>
+                    <div class="flex flex-col items-start shadow-main rounded-2xl p-5">
+                        <div class="flex items-center justify-center w-12 h-12 bg-green-500 text-white font-bold rounded-full">
+                            <span>4</span>
+                        </div>
+                        <h3 class="text-base font-bold leading-7 text-black mt-2">Verify and Submit</h3>
+                        <p class="text-base font-medium">Check your information, agree to terms, and submit for account approval.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="w-full">
-        <!-- Wide full-width container for additional content -->
-    </div>
-    <div class="w-full bg-green-500">
-        <!-- Full-width footer container with green background -->
-    </div>
+         </div>
+
+        <!-- Component 5: Contact Section -->
+        <div class="container mx-auto my-10 text-center">
+            <h2 class="text-2xl font-bold mb-4"></h2>
+            <p></p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 ">
+                <div class="flex flex-col items-center">
+                    <img class="h-16 mb-2" src="assets\component-5\contact-icons\green-email.svg" alt="Email Address">
+                    <h3 class="font-bold">Email</h3>
+                    <p>support@cachebank.com</p>
+                    <p class="font-bold text-green-500" href="mailto: hello@loople.com">hi@cachebank.com</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img class="h-16 mb-2" src="assets\component-5\contact-icons\green-phone.svg" alt="contact number">
+                    <h3 class="font-bold">Phone</h3>
+                    <p>Reach out to us by phone</p>
+                    <p class="font-bold text-green-500"  href="">+215-486-5135</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img class="h-16 mb-2" src="assets\component-5\contact-icons\green-location-pin.svg" alt="office adress">
+                    <h3 class="font-bold">Location</h3>
+                    <p>Find us at our office</p>
+                    <p class="font-bold text-green-500"  href="https://www.google.com/maps">15 Tech Alley, Cape Town</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="w-full bg-green-500">     
+            <div class="container flex flex-col mx-h-8">
+                <div class="flex flex-col justify-center ">
+
+
+
+
+         <div class="flex justify-center gap-5 bg-green-500 w-full mb-5 mt-16 max-h-8">
+            <!-- <div class="flex justify-center justify-around">  -->
+            <img src="assets\component-5\footer-icons\twitter-x.svg">
+            <img src="assets\component-5\footer-icons\facebook.svg">
+            <img src="assets\component-5\footer-icons\github.svg">
+            <img src="assets\component-5\footer-icons\insta.svg">
+            <img src="assets\component-5\footer-icons\linkedin.svg">
+         </div>
+         <div class="flex flex-col justify-center">
+            <p class="flex justify-center font-normal leading-7 mb-16 mt-5">2024 Cache Bank. All rights reserved.</p>
+        </div>
+    </div></div></div>
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/plugins/countup.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/countto.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/plugins/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/maps.js"></script>
     <script src="./assets/js/loopple/loopple.js"></script>
+
+    <script>
+        // Mobile menu toggle functionality
+        document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        //hide on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');   //Hides menu by defult
+        })
+
+        // closing when clicked outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const toggleButton = document.getElementById('mobile-menu-toggle');
+
+            if (!mobileMenu.contains(event.target) && !toggleButton.contains(event.target)){
+                mobileMenu.classList.add('hidden'); //Hides when clicked outside
+            }
+        });
+    </script>
+    
 </body>
+</html>
